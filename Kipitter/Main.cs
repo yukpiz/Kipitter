@@ -52,8 +52,26 @@ namespace Kipitter
 
         private void main_Load(object sender, EventArgs e)
         {
-            HttpRequest req = new HttpRequest();
-            req.Get();
+            //HttpRequest req = new HttpRequest();
+            //req.Get();
+
+            WeekEffect weekEffect = ErinnTimer.getWeekEffect();
+
+            string title = string.Join(" ", new string[] {
+                weekEffect.RealWeekJp,
+                weekEffect.ErinnWeekJp,
+                weekEffect.ErinnWeekEn,
+            });
+            toolWeekEffect.ToolTipTitle = title;
+
+            string effects = string.Join("\n  ", weekEffect.Effects);
+            string items = string.Join("\n  ", weekEffect.FlcItems);
+            string toolTip = 
+                "[曜日効果]\n  " + effects +
+                "\n\n" +
+                "[FLCアイテム]\n  " + items;
+            toolWeekEffect.SetToolTip(labelRealTime, toolTip);
+            toolWeekEffect.SetToolTip(labelErinnTime, toolTip);
         }
 
         private void linkTradeBoard_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -84,6 +102,18 @@ namespace Kipitter
         {
             disableLink((LinkLabel)sender);
             switchPane(paneSetting);
+        }
+
+        private void erinnTimer_Tick(object sender, EventArgs e)
+        {
+            DateTime erinnTime = ErinnTimer.getErinnTime();
+            labelErinnTime.Text = erinnTime.ToString("[ET] H:mm");
+        }
+
+        private void realTimer_Tick(object sender, EventArgs e)
+        {
+            DateTime realTime = DateTime.Now;
+            labelRealTime.Text = realTime.ToString("[RT] H:mm");
         }
     }
 }

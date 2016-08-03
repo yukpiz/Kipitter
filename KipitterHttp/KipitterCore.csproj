@@ -45,9 +45,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Constant.cs" />
+    <Compile Include="ErinnTimer.cs" />
     <Compile Include="HtmlParser.cs" />
     <Compile Include="HttpRequest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WeekEffect.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

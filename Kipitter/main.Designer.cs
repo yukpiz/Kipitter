@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.linkSetting = new System.Windows.Forms.LinkLabel();
@@ -37,6 +38,11 @@
             this.linkTradeBoard = new System.Windows.Forms.LinkLabel();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.listConsole = new System.Windows.Forms.ListBox();
+            this.erinnTimer = new System.Windows.Forms.Timer(this.components);
+            this.realTimer = new System.Windows.Forms.Timer(this.components);
+            this.toolWeekEffect = new System.Windows.Forms.ToolTip(this.components);
+            this.labelRealTime = new System.Windows.Forms.Label();
+            this.labelErinnTime = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -55,6 +61,8 @@
             // 
             // splitContainer1.Panel1
             // 
+            this.splitContainer1.Panel1.Controls.Add(this.labelErinnTime);
+            this.splitContainer1.Panel1.Controls.Add(this.labelRealTime);
             this.splitContainer1.Panel1.Controls.Add(this.linkSetting);
             this.splitContainer1.Panel1.Controls.Add(this.linkKnights);
             this.splitContainer1.Panel1.Controls.Add(this.linkAlarm);
@@ -65,7 +73,7 @@
             // 
             this.splitContainer1.Panel2.Controls.Add(this.splitContainer2);
             this.splitContainer1.Size = new System.Drawing.Size(448, 331);
-            this.splitContainer1.SplitterDistance = 47;
+            this.splitContainer1.SplitterDistance = 56;
             this.splitContainer1.SplitterWidth = 1;
             this.splitContainer1.TabIndex = 0;
             this.splitContainer1.TabStop = false;
@@ -74,6 +82,7 @@
             // 
             this.linkSetting.ActiveLinkColor = System.Drawing.Color.White;
             this.linkSetting.AutoSize = true;
+            this.linkSetting.DisabledLinkColor = System.Drawing.Color.White;
             this.linkSetting.LinkColor = System.Drawing.Color.White;
             this.linkSetting.Location = new System.Drawing.Point(412, 3);
             this.linkSetting.Name = "linkSetting";
@@ -88,6 +97,7 @@
             // 
             this.linkKnights.ActiveLinkColor = System.Drawing.Color.White;
             this.linkKnights.AutoSize = true;
+            this.linkKnights.DisabledLinkColor = System.Drawing.Color.White;
             this.linkKnights.LinkColor = System.Drawing.Color.White;
             this.linkKnights.Location = new System.Drawing.Point(218, 3);
             this.linkKnights.Name = "linkKnights";
@@ -102,6 +112,7 @@
             // 
             this.linkAlarm.ActiveLinkColor = System.Drawing.Color.White;
             this.linkAlarm.AutoSize = true;
+            this.linkAlarm.DisabledLinkColor = System.Drawing.Color.White;
             this.linkAlarm.LinkColor = System.Drawing.Color.White;
             this.linkAlarm.Location = new System.Drawing.Point(151, 3);
             this.linkAlarm.Name = "linkAlarm";
@@ -116,6 +127,7 @@
             // 
             this.linkBattleTimer.ActiveLinkColor = System.Drawing.Color.White;
             this.linkBattleTimer.AutoSize = true;
+            this.linkBattleTimer.DisabledLinkColor = System.Drawing.Color.White;
             this.linkBattleTimer.LinkColor = System.Drawing.Color.White;
             this.linkBattleTimer.Location = new System.Drawing.Point(56, 3);
             this.linkBattleTimer.Name = "linkBattleTimer";
@@ -130,6 +142,7 @@
             // 
             this.linkTradeBoard.ActiveLinkColor = System.Drawing.Color.White;
             this.linkTradeBoard.AutoSize = true;
+            this.linkTradeBoard.DisabledLinkColor = System.Drawing.Color.White;
             this.linkTradeBoard.LinkColor = System.Drawing.Color.White;
             this.linkTradeBoard.Location = new System.Drawing.Point(3, 3);
             this.linkTradeBoard.Name = "linkTradeBoard";
@@ -151,8 +164,8 @@
             // splitContainer2.Panel2
             // 
             this.splitContainer2.Panel2.Controls.Add(this.listConsole);
-            this.splitContainer2.Size = new System.Drawing.Size(448, 283);
-            this.splitContainer2.SplitterDistance = 198;
+            this.splitContainer2.Size = new System.Drawing.Size(448, 274);
+            this.splitContainer2.SplitterDistance = 191;
             this.splitContainer2.SplitterWidth = 1;
             this.splitContainer2.TabIndex = 0;
             this.splitContainer2.TabStop = false;
@@ -167,8 +180,47 @@
             this.listConsole.ItemHeight = 11;
             this.listConsole.Location = new System.Drawing.Point(0, 0);
             this.listConsole.Name = "listConsole";
-            this.listConsole.Size = new System.Drawing.Size(448, 84);
+            this.listConsole.Size = new System.Drawing.Size(448, 82);
             this.listConsole.TabIndex = 0;
+            // 
+            // erinnTimer
+            // 
+            this.erinnTimer.Enabled = true;
+            this.erinnTimer.Interval = 500;
+            this.erinnTimer.Tick += new System.EventHandler(this.erinnTimer_Tick);
+            // 
+            // realTimer
+            // 
+            this.realTimer.Enabled = true;
+            this.realTimer.Interval = 500;
+            this.realTimer.Tick += new System.EventHandler(this.realTimer_Tick);
+            // 
+            // toolWeekEffect
+            // 
+            this.toolWeekEffect.AutoPopDelay = 20000;
+            this.toolWeekEffect.InitialDelay = 500;
+            this.toolWeekEffect.ReshowDelay = 100;
+            this.toolWeekEffect.ShowAlways = true;
+            // 
+            // labelRealTime
+            // 
+            this.labelRealTime.AutoSize = true;
+            this.labelRealTime.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.labelRealTime.ForeColor = System.Drawing.Color.White;
+            this.labelRealTime.Location = new System.Drawing.Point(3, 21);
+            this.labelRealTime.Name = "labelRealTime";
+            this.labelRealTime.Size = new System.Drawing.Size(0, 11);
+            this.labelRealTime.TabIndex = 8;
+            // 
+            // labelErinnTime
+            // 
+            this.labelErinnTime.AutoSize = true;
+            this.labelErinnTime.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.labelErinnTime.ForeColor = System.Drawing.Color.White;
+            this.labelErinnTime.Location = new System.Drawing.Point(3, 34);
+            this.labelErinnTime.Name = "labelErinnTime";
+            this.labelErinnTime.Size = new System.Drawing.Size(0, 11);
+            this.labelErinnTime.TabIndex = 9;
             // 
             // Main
             // 
@@ -209,6 +261,11 @@
         private System.Windows.Forms.LinkLabel linkSetting;
         private System.Windows.Forms.SplitContainer splitContainer2;
         private System.Windows.Forms.ListBox listConsole;
+        private System.Windows.Forms.Timer erinnTimer;
+        private System.Windows.Forms.Timer realTimer;
+        private System.Windows.Forms.ToolTip toolWeekEffect;
+        private System.Windows.Forms.Label labelErinnTime;
+        private System.Windows.Forms.Label labelRealTime;
     }
 }
 
