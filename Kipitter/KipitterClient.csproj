@@ -79,6 +79,12 @@
     <Compile Include="PaneBattleTimer.Designer.cs">
       <DependentUpon>PaneBattleTimer.cs</DependentUpon>
     </Compile>
+    <Compile Include="PaneTimer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PaneTimer.Designer.cs">
+      <DependentUpon>PaneTimer.cs</DependentUpon>
+    </Compile>
     <Compile Include="PaneTradeBoard.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -101,6 +107,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PaneBattleTimer.resx">
       <DependentUpon>PaneBattleTimer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PaneTimer.resx">
+      <DependentUpon>PaneTimer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PaneTradeBoard.resx">
       <DependentUpon>PaneTradeBoard.cs</DependentUpon>

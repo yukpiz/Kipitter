@@ -31,6 +31,8 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.labelErinnTime = new System.Windows.Forms.Label();
+            this.labelRealTime = new System.Windows.Forms.Label();
             this.linkSetting = new System.Windows.Forms.LinkLabel();
             this.linkKnights = new System.Windows.Forms.LinkLabel();
             this.linkAlarm = new System.Windows.Forms.LinkLabel();
@@ -41,8 +43,7 @@
             this.erinnTimer = new System.Windows.Forms.Timer(this.components);
             this.realTimer = new System.Windows.Forms.Timer(this.components);
             this.toolWeekEffect = new System.Windows.Forms.ToolTip(this.components);
-            this.labelRealTime = new System.Windows.Forms.Label();
-            this.labelErinnTime = new System.Windows.Forms.Label();
+            this.linkTimer = new System.Windows.Forms.LinkLabel();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -61,6 +62,7 @@
             // 
             // splitContainer1.Panel1
             // 
+            this.splitContainer1.Panel1.Controls.Add(this.linkTimer);
             this.splitContainer1.Panel1.Controls.Add(this.labelErinnTime);
             this.splitContainer1.Panel1.Controls.Add(this.labelRealTime);
             this.splitContainer1.Panel1.Controls.Add(this.linkSetting);
@@ -77,6 +79,26 @@
             this.splitContainer1.SplitterWidth = 1;
             this.splitContainer1.TabIndex = 0;
             this.splitContainer1.TabStop = false;
+            // 
+            // labelErinnTime
+            // 
+            this.labelErinnTime.AutoSize = true;
+            this.labelErinnTime.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.labelErinnTime.ForeColor = System.Drawing.Color.White;
+            this.labelErinnTime.Location = new System.Drawing.Point(3, 34);
+            this.labelErinnTime.Name = "labelErinnTime";
+            this.labelErinnTime.Size = new System.Drawing.Size(0, 11);
+            this.labelErinnTime.TabIndex = 9;
+            // 
+            // labelRealTime
+            // 
+            this.labelRealTime.AutoSize = true;
+            this.labelRealTime.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.labelRealTime.ForeColor = System.Drawing.Color.White;
+            this.labelRealTime.Location = new System.Drawing.Point(3, 21);
+            this.labelRealTime.Name = "labelRealTime";
+            this.labelRealTime.Size = new System.Drawing.Size(0, 11);
+            this.labelRealTime.TabIndex = 8;
             // 
             // linkSetting
             // 
@@ -202,25 +224,19 @@
             this.toolWeekEffect.ReshowDelay = 100;
             this.toolWeekEffect.ShowAlways = true;
             // 
-            // labelRealTime
+            // linkTimer
             // 
-            this.labelRealTime.AutoSize = true;
-            this.labelRealTime.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.labelRealTime.ForeColor = System.Drawing.Color.White;
-            this.labelRealTime.Location = new System.Drawing.Point(3, 21);
-            this.labelRealTime.Name = "labelRealTime";
-            this.labelRealTime.Size = new System.Drawing.Size(0, 11);
-            this.labelRealTime.TabIndex = 8;
-            // 
-            // labelErinnTime
-            // 
-            this.labelErinnTime.AutoSize = true;
-            this.labelErinnTime.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.labelErinnTime.ForeColor = System.Drawing.Color.White;
-            this.labelErinnTime.Location = new System.Drawing.Point(3, 34);
-            this.labelErinnTime.Name = "labelErinnTime";
-            this.labelErinnTime.Size = new System.Drawing.Size(0, 11);
-            this.labelErinnTime.TabIndex = 9;
+            this.linkTimer.ActiveLinkColor = System.Drawing.Color.White;
+            this.linkTimer.AutoSize = true;
+            this.linkTimer.DisabledLinkColor = System.Drawing.Color.White;
+            this.linkTimer.LinkColor = System.Drawing.Color.White;
+            this.linkTimer.Location = new System.Drawing.Point(271, 3);
+            this.linkTimer.Name = "linkTimer";
+            this.linkTimer.Size = new System.Drawing.Size(61, 11);
+            this.linkTimer.TabIndex = 10;
+            this.linkTimer.TabStop = true;
+            this.linkTimer.Text = "タイマー";
+            this.linkTimer.VisitedLinkColor = System.Drawing.Color.White;
             // 
             // Main
             // 
@@ -266,6 +282,7 @@
         private System.Windows.Forms.ToolTip toolWeekEffect;
         private System.Windows.Forms.Label labelErinnTime;
         private System.Windows.Forms.Label labelRealTime;
+        private System.Windows.Forms.LinkLabel linkTimer;
     }
 }
 
